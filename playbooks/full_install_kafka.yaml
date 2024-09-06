@@ -12,7 +12,7 @@
   tasks:
     # - include_tasks: tasks/kafka_user.yml
     # - include_tasks: tasks/install_java.yml
-    - include_tasks: tasks/install_new.yml
+    # - include_tasks: tasks/install_new.yml
     - include_tasks: tasks/install_kafka.yml
     - include_tasks: tasks/create_directories.yml
     - include_tasks: tasks/send_configs.yml
