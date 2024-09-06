@@ -18,4 +18,4 @@
     - include_tasks: tasks/send_configs.yml
     - include_tasks: tasks/format_kafka_storage.yml
     - include_tasks: tasks/send_systemd_units.yml
-    - include_tasks: tasks/install_lag_exporter.yml
+    # - include_tasks: tasks/install_lag_exporter.yml
