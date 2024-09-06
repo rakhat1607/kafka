@@ -1,6 +1,6 @@
 ---
 - name: 'Kafka lag exporter first installation'
-  remote_user: ec2-user
+  remote_user: ubuntu
   hosts: kafka
   become: yes
   tasks:
