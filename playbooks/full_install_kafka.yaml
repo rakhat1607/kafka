@@ -1,6 +1,6 @@
 ---
 - name: Configure KRaft cluster
-  # remote_user: ec2-user
+  remote_user: ubuntu
   hosts: kubernetes  
   become: yes
   vars:
