@@ -1,13 +1,22 @@
 ---
-- name: 'Send kafka-lag-exporter archive'
+- name: Download kafka-lag-exporter archive
+  get_url:
+    url: 'https://github.com/lightbend/kafka-lag-exporter/releases/download/v0.8.2/kafka-lag-exporter-0.8.2.zip'
+    dest: '/tmp/kafka-lag-exporter-0.8.2.zip'
+
+- name: Unarchive kafka-lag-exporter
   unarchive:
-    src: 'files/kafka-lag-exporter-{{ kafka_lag_exporter_version }}.zip'
-    dest: /opt/
+    src: '/tmp/kafka-lag-exporter-0.8.2.zip'
+    dest: '/opt/'
+    remote_src: yes
+
+- name: Set ownership and permissions
+  file:
+    path: '/opt/kafka-lag-exporter-0.8.2'
     owner: kafka
     group: kafka
-    mode: 0755
-    remote_src: no 
-    creates: '/opt/kafka-lag-exporter-{{ kafka_lag_exporter_version }}'
+    mode: '0755'
+    state: directory
 
 - name: Rename kafka-lag-exporter directory if necessary
   command: 'mv /opt/kafka-lag-exporter-{{ kafka_lag_exporter_version }} /opt/kafka-lag-exporter'
