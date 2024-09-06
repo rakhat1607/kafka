@@ -2,7 +2,7 @@
 kafka:
   hosts:
     kafka-dev-outpost01-auth:
-      ansible_host: 172.26.1.150
+      ansible_host: 192.168.64.103
       process_roles:
         - broker
         - controller
